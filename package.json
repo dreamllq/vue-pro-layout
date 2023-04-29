@@ -2,17 +2,18 @@
   "name": "vite-vue3-ts-component-template",
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/vue-auto-height-wrapper.umd.cjs",
-  "module": "./dist/vue-auto-height-wrapper.js",
+  "main": "./dist/vite-vue3-ts-component-template.umd.cjs",
+  "module": "./dist/vite-vue3-ts-component-template.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-auto-height-wrapper.js",
-      "require": "./dist/vue-auto-height-wrapper.umd.cjs"
+      "import": "./dist/vite-vue3-ts-component-template.js",
+      "require": "./dist/vite-vue3-ts-component-template.umd.cjs"
     }
   },
   "files": [
     "/dist"
   ],
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "npm run docs:dev",
     "build": "vue-tsc && vite build && vue-tsc",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.1.0",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vueuse/core": "^10.1.0",
     "element-plus": "^2.3.4",
     "eslint": "^8.39.0",
     "eslint-plugin-vue": "^9.11.0",
