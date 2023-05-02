@@ -20,7 +20,8 @@
     "dev": "npm run docs:dev",
     "build": "vue-tsc && vite build && vue-tsc",
     "preview": "vite preview",
-    "postversion": "git push && git push --tags && npm run build && npm publish --registry=https://registry.npmjs.org/",
+    "postdoc": "npm run docs:build && git add . && git commit -m \"feat: change doc\" && git push",
+    "postversion": "git push && git push --tags && npm run postdoc && npm run build && npm publish --registry=https://registry.npmjs.org/",
     "test": "jest",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
@@ -49,6 +50,9 @@
     "vitepress": "^1.0.0-alpha.74",
     "vue": "^3.2.47",
     "vue-tsc": "^1.4.2"
+  },
+  "peerDependencies": {
+    "vue": "3.x"
   },
   "author": {
     "name": "lvliqi",
