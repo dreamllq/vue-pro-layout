@@ -11,5 +11,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, '../src'),
       '@dist': path.resolve(__dirname, '../')
     }
+  },
+  ssr: {
+    noExternal: [
+      'lodash',
+      'vue',
+      'uuid',
+      'moment'
+    ] 
   }
 });
