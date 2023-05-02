@@ -3,13 +3,18 @@ module.exports = {
     'browser': true,
     'es2021': true
   },
-  'extends': 'plugin:vue/vue3-recommended',
+  'extends': [
+    'eslint:recommended',
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended'
+  ],
+  'parser': 'vue-eslint-parser',
   'parserOptions': {
-    'ecmaFeatures': { 'jsx': true },
     'ecmaVersion': 12,
+    'parser': '@typescript-eslint/parser',
     'sourceType': 'module'
   },
-  'plugins': ['vue'],
+  'plugins': ['vue', '@typescript-eslint'],
   'rules': {
     'semi': ['error', 'always'],
     'quotes': ['error', 'single'],
@@ -99,8 +104,8 @@ module.exports = {
     'indent': ['error', 2],
     'func-call-spacing': ['error', 'never'],
     'comma-dangle': ['warn', 'never'],
-    'vue/multi-word-component-names': 'off',
     'no-prototype-builtins': 'warn',
+    'vue/multi-word-component-names': 'off',
     'vue/no-useless-template-attributes': 'warn',
     'vue/html-closing-bracket-newline': 'off',
     'vue/block-tag-newline': [
@@ -139,6 +144,7 @@ module.exports = {
     'vue/eqeqeq': 'warn',
     'vue/no-mutating-props': 'warn',
     'vue/require-valid-default-prop': 'warn',
-    'vue/no-duplicate-attributes': 'warn' 
+    'vue/no-duplicate-attributes': 'warn',
+    '@typescript-eslint/no-non-null-assertion': 'off'
   }
 };
