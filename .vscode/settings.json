@@ -7,6 +7,9 @@
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "eslint.run": "onType",
   "path-intellisense.mappings": {
     "@": "${workspaceRoot}/src"
