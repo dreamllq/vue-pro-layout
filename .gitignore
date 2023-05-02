@@ -13,6 +13,7 @@ dist-ssr
 *.local
 docs/.vitepress/cache
 coverage
+!docs/.vitepress/dist
 
 # Editor directories and files
 .idea
