@@ -1,7 +1,9 @@
 import { defineConfig } from 'vitepress'
+import pkg from '../../package.json';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site"
+  base: `/${pkg.name}/docs/.vitepress/dist`,
+  title: pkg.name,
+  description: pkg.description
 })

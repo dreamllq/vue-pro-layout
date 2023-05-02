@@ -1,5 +1,6 @@
 {
   "name": "vite-vue3-ts-component-template",
+  "description": "模板",
   "version": "0.0.0",
   "type": "module",
   "main": "./dist/vite-vue3-ts-component-template.umd.cjs",
