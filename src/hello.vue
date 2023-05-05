@@ -8,6 +8,8 @@
 
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.a {
+  margin-top: 0%;
+}
 </style>
