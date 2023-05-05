@@ -17,7 +17,7 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts',
       name: 'ViteVue3TsComponentTemplate',
-      fileName: 'vite-vue3-ts-component-template'
+      fileName: 'index'
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖
