@@ -1,0 +1,40 @@
+/**
+ * Table
+ * -------------------------------------------------------------------------- */
+
+.vp-doc .reset {
+  table {
+    display: table;
+    border-collapse: separate;
+    margin: auto;
+    overflow-x: inherit;
+  }
+
+  tr {
+    border-top: 0;
+    transition: none;
+  }
+
+  tr:nth-child(2n) {
+    background-color: #FFFFFF;
+  }
+
+  th,
+  td {
+    border: 0;
+    padding: 8px 0;
+    border-bottom: 1px solid #EEEEEE;
+  }
+
+  th {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--vp-c-text-2);
+    background-color: #FFFFFF;
+  }
+
+  td {
+    font-size: 14px;
+  }
+}
