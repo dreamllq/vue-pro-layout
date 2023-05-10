@@ -18,7 +18,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "npm run docs:dev",
-    "build": "vue-tsc && vite build && vue-tsc",
+    "build": "vite build && vue-tsc -p tsconfig-build.json",
     "preview": "vite preview",
     "postversion": "git push && git push --tags && npm run docs:build && npm run build && npm publish --registry=https://registry.npmjs.org/",
     "test": "jest",
