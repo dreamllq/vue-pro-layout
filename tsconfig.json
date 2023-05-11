@@ -45,7 +45,15 @@
     "src/*.tsx",
     "src/*.vue",
     "tests/**/*.ts",
-    "tests/*.ts"
+    "tests/*.ts",
+    "docs/**/*.ts",
+    "docs/**/*.d.ts",
+    "docs/**/*.tsx",
+    "docs/**/*.vue",
+    "docs/*.ts",
+    "docs/*.d.ts",
+    "docs/*.tsx",
+    "docs/*.vue"
   ],
   "references": [
     {

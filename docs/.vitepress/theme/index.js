@@ -4,6 +4,7 @@ import './custom.scss';
 // import Layout from './layout.vue'
 import NotFound from './not-found.vue'
 import DefaultTheme from 'vitepress/theme'
+import Demo from '../../global/demo/demo.vue'
 
 export default {
   ...DefaultTheme,
@@ -11,5 +12,6 @@ export default {
   NotFound,
   enhanceApp({ app, router, siteData }) {
     app.use(ElementPlus);
+    app.component('Demo', Demo)
   }
 };

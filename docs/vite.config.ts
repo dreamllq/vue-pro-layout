@@ -8,7 +8,6 @@ export default defineConfig({
   plugins: [vueJsx()],
   resolve: {
     alias: {
-      '@components': path.resolve(__dirname, '.vitepress/components'),
       '@': path.resolve(__dirname, '../src'),
       [pkg.name]: path.resolve(__dirname, '../src'),
       '@dist': path.resolve(__dirname, '../')
