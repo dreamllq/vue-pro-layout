@@ -1,5 +1,5 @@
-# hello-world
+---
+layout: page
+---
 
-## DEMO
-
-<Demo c="hello-world/index"/>
+<Demo c="base/demo"/>

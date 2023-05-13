@@ -1,3 +1,3 @@
-export { default as Hello } from './hello.vue';
-export { default as World } from './world.jsx';
+import './style.scss';
+export { default as ProLayout } from './components/pro-layout.vue';
 
