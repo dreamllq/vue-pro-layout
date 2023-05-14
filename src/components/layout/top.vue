@@ -1,7 +1,7 @@
 <template>
   <div class='lc-pro-layout top'>
     <el-container style='height: 100%;'>
-      <el-header height='55px' style='padding: 0;'>
+      <el-header height='55px' style='padding: 0;' class='layout-header'>
         <div class='header-container flex'>
           <div class='logo-container flex-none flex container-item'>
             <layout-logo />
@@ -35,6 +35,11 @@ import AsideMenu from '@/components/menu/index.vue';
 </script>
 
 <style scoped lang="scss">
+
+.layout-header {
+  border-bottom: 1px solid var(--el-border-color-lighter);
+}
+
 .header-container {
   background-color: var(--el-color-primary);
   height: 100%;

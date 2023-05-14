@@ -34,15 +34,23 @@ body {
   --el-menu-base-level-padding: 12px;
 }
 
-.el-menu--popup {
-  padding: 0 4px;
+.el-popper.menu-popper {
+  border: 0;
+}
+
+.el-menu--popup-container .el-menu--popup {
+  padding: 4px 6px;
+}
+
+.el-menu {
+  border: 0 !important;
 }
 
 .el-menu.el-menu--horizontal {
   align-items: center;
 
   .el-menu-item {
-    margin: 0 4px;
+    margin: 0 2px;
 
     &.is-active {
       background-color: var(--el-menu-active-bg-color) !important;
@@ -50,7 +58,7 @@ body {
   }
   
   .el-sub-menu {
-    margin: 0 4px;
+    margin: 0 2px;
   }
 
   &>.el-sub-menu .el-sub-menu__title {

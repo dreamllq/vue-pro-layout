@@ -11,7 +11,7 @@ export default defineComponent({
   },
   methods: {
     renderSubMenu(menuItem) {
-      return <el-sub-menu index={menuItem.key}>
+      return <el-sub-menu index={menuItem.key} popper-class='menu-popper'>
         {{
           default: () => (menuItem.children.map(item => {
             if (Array.isArray(item.children) && item.children.length > 0) {
