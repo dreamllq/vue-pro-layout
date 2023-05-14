@@ -31,14 +31,14 @@
 </template>
     
 <script setup lang="ts">
-import { PropType, ref } from 'vue';
+import { PropType } from 'vue';
 import SubMenu from './sub-menu.tsx';
 import { MenuItem } from '@/types';
 import { useBus } from '@/use-bus';
 
 const bus = useBus();
 
-const props = defineProps({
+defineProps({
   menuData: {
     type: Array as PropType<MenuItem[]>,
     default: () => [] 
@@ -53,18 +53,10 @@ const props = defineProps({
   }
 });
 
-// const isCollapse = ref(false);
-
 const onSelect = (...args) => {
   bus.emit('menu-select', ...args);
 };
 
-
-// const handleCollapse = (collapse) => {
-//   isCollapse.value = collapse;
-// };
-
-// defineExpose({ handleCollapse });
 </script>
 
 <style lang="scss">

@@ -1,5 +1,5 @@
 <template>
-  <lc-menu :menu-data='config.menuData' :menu-index='config.menuSelectedIndex' :is-collapse='menuIsCollapse' />
+  <lc-menu :menu-data='config.menu.data' :menu-index='config.menu.index' :is-collapse='menuIsCollapse' />
 </template>
 
 <script setup lang="ts">

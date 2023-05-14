@@ -6,8 +6,7 @@ export interface LayoutProps {
   contentWidth:'Fluid' | 'Fixed',
   siderWidth: number,
   suppressSiderWhenMenuEmpty: boolean,
-  menuData: MenuItem[],
-  menuSelectedIndex:string
+  menu: MenuProps
 }
 
 export type LayoutType = 'side' | 'top' | 'mix'
@@ -18,4 +17,9 @@ export interface MenuItem {
   icon?: string,
   subPages?: string[],
   children?: MenuItem[]
+}
+
+export interface MenuProps {
+  data: MenuItem[],
+  index: string
 }

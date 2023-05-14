@@ -71,6 +71,7 @@ const onCollapsed = () => {
 
   .container-item {
     margin: 4px 0;
+    box-sizing: border-box;
   }
 }
 
@@ -80,35 +81,6 @@ const onCollapsed = () => {
   padding: 16px 12px;
   box-sizing: border-box;
   border-bottom: 1px solid var(--el-border-color-lighter);
-}
-
-.menu-container {
-  --el-menu-bg-color: var(--el-color-primary);
-  --el-menu-text-color: #EEEEEE;
-  --el-menu-active-color: #FFFFFF;
-  --el-menu-hover-bg-color: rgb(0 0 0 / 6%);
-  --el-menu-active-bg-color: #1677FF;
-  --el-menu-item-height: 40px;
-  --el-menu-sub-item-height: var(--el-menu-item-height);
-  --el-menu-base-level-padding: 12px;
-
-  box-sizing: border-box;
-
-  ::v-deep(.el-menu) {
-    .el-sub-menu__title {
-      border-radius: 4px;
-    }
-
-    .el-menu-item {
-      margin: 4px 0;
-      border-radius: 4px;
-      
-      &.is-active {
-        background-color: var(--el-menu-active-bg-color);
-      }
-    }
-
-  }
 }
 
 .aside-collapsed-button {

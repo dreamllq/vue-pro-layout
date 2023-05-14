@@ -1,10 +1,10 @@
 <template>
   <div style='height: 900px;border: 1px solid #000000;'>
-    <pro-layout :menu-data='menuData' :menu-selected-index='menuSelectedIndex' @menu-select='onMenuSelect'>
-      <el-button @click='menuSelectedIndex = "welcome1-1"'>
+    <pro-layout :menu='menu' @menu-select='onMenuSelect'>
+      <el-button @click='menu.index = "welcome1-1"'>
         首页1-1
       </el-button>
-      <el-button @click='menuSelectedIndex = "welcome1"'>
+      <el-button @click='menu.index = "welcome1"'>
         首页1
       </el-button>
     </pro-layout>
@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { reactive, ref } from 'vue';
 import { ProLayout } from 'lc-vue-pro-layout';
 
 const menuData = [
@@ -55,8 +55,14 @@ const menuData = [
 
 const menuSelectedIndex = ref('welcome1-2');
 
+const menu = reactive({
+  data: menuData,
+  index: 'welcome1-2'
+});
+
+
 const onMenuSelect = (...args) => {
-  menuSelectedIndex.value = args[0];
+  menu.index = args[0];
   console.log(args);
 };
 </script>
