@@ -3,3 +3,22 @@
   width: 100%;
   overflow: hidden;
 }
+
+.flex {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+
+  &.flex-column {
+    flex-direction: column;
+    height: 100%;;
+  }
+
+  .flex-item {
+    flex: 1;
+  }
+
+  .flex-none {
+    flex: none;
+  }
+}

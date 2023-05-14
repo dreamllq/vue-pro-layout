@@ -6,7 +6,15 @@ export interface LayoutProps {
   contentWidth:'Fluid' | 'Fixed',
   siderWidth: number,
   suppressSiderWhenMenuEmpty: boolean,
-  menuData: any[]
+  menuData: MenuItem[]
 }
 
 export type LayoutType = 'side' | 'top' | 'mix'
+
+export interface MenuItem {
+  key: string,
+  label: string,
+  icon?: string,
+  subPages?: string[],
+  children?: MenuItem[]
+}
