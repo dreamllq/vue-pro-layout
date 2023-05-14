@@ -43,6 +43,10 @@ body {
 
   .el-menu-item {
     margin: 0 4px;
+
+    &.is-active {
+      background-color: var(--el-menu-active-bg-color) !important;
+    }
   }
   
   .el-sub-menu {
