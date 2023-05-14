@@ -1,7 +1,7 @@
 <template>
   <div class='lc-pro-layout side'>
     <el-container style='height: 100%;'>
-      <el-aside :width='`${config.siderWidth}px`'>
+      <el-aside :width='`${siderWidth}px`' style='overflow: revert; transition: all .5s ease 0s;'>
         <div class='aside-container flex flex-column'>
           <div class='logo-container flex-none flex container-item'>
             <layout-logo />
@@ -13,14 +13,29 @@
             <aside-menu />
           </div>
           <div class='actions-container flex-none container-item'>
-            <horizontal-actions>
+            <horizontal-actions v-if='menuIsCollapse === false'>
               <template #default>
                 <slot name='actions' />
               </template>
             </horizontal-actions>
+            <vertical-actions v-else>
+              <template #default>
+                <slot name='actions' />
+              </template>
+            </vertical-actions>
           </div>
           <div v-if='slots.menuFooter' class='class-menu-footer-container flex-none container-item'>
             <slot name='menuFooter' />
+          </div>
+          <div class='aside-collapsed-button' @click='onCollapsed'>
+            <el-icon>
+              <template v-if='menuIsCollapse'>
+                <component is='ArrowRight' />
+              </template>
+              <template v-else>
+                <component is='ArrowLeft' />
+              </template>
+            </el-icon>
           </div>
         </div>
       </el-aside>
@@ -37,9 +52,14 @@ import { useState } from '@/use-state';
 import LayoutLogo from '@/components/logo/index.vue';
 import AsideMenu from '@/components/menu/index.vue';
 import HorizontalActions from '@/components/actions/horizontal.vue';
+import VerticalActions from '@/components/actions/vertical.vue';
 
-const { config } = useState();
+const { menuIsCollapse, siderWidth } = useState();
 const slots = useSlots();
+
+const onCollapsed = () => {
+  menuIsCollapse.value = !menuIsCollapse.value;
+};
 </script>
 
 <style scoped lang="scss">
@@ -47,6 +67,7 @@ const slots = useSlots();
   background-color: var(--el-color-primary);
   padding: 0 8px;
   box-sizing: border-box;
+  position: relative;
 
   .container-item {
     margin: 4px 0;
@@ -69,6 +90,7 @@ const slots = useSlots();
   --el-menu-active-bg-color: #1677FF;
   --el-menu-item-height: 40px;
   --el-menu-sub-item-height: var(--el-menu-item-height);
+  --el-menu-base-level-padding: 12px;
 
   box-sizing: border-box;
 
@@ -87,5 +109,24 @@ const slots = useSlots();
     }
 
   }
+}
+
+.aside-collapsed-button {
+  position: absolute;
+  inset-block-start: 18px;
+  z-index: 101;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  border-radius: 40px;
+  inset-inline-end: -13px;
+  transition: transform .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: rgb(0 0 0 / 25%);
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 8px -2px rgb(0 0 0 / 5%), 0 1px 4px -1px rgb(25 15 15 / 7%), 0 0 1px 0 rgb(0 0 0 / 8%);
 }
 </style>

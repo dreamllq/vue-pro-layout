@@ -1,5 +1,8 @@
 <template>
   <component :is='layoutComponent'>
+    <template #default>
+      <slot />
+    </template>
     <template v-if='slots.menuHeader' #menuHeader>
       <slot name='menuHeader' />
     </template>

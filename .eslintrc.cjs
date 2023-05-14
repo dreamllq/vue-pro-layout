@@ -145,6 +145,7 @@ module.exports = {
     'vue/no-mutating-props': 'warn',
     'vue/require-valid-default-prop': 'warn',
     'vue/no-duplicate-attributes': 'warn',
+    'vue/require-component-is': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off'
   }
 };

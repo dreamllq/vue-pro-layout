@@ -46,21 +46,25 @@ const props = defineProps({
   menuIndex: {
     type: String,
     default: null 
+  },
+  isCollapse: {
+    type: Boolean,
+    default: false
   }
 });
 
-const isCollapse = ref(false);
+// const isCollapse = ref(false);
 
 const onSelect = (...args) => {
   bus.emit('menu-select', ...args);
 };
 
 
-const handleCollapse = (collapse) => {
-  isCollapse.value = collapse;
-};
+// const handleCollapse = (collapse) => {
+//   isCollapse.value = collapse;
+// };
 
-defineExpose({ handleCollapse });
+// defineExpose({ handleCollapse });
 </script>
 
 <style lang="scss">

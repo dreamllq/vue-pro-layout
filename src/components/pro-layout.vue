@@ -1,5 +1,9 @@
 <template>
   <layout>
+    <template #default>
+      <slot />
+    </template>
+
     <template v-if='slots.menuHeader' #menuHeader>
       <slot name='menuHeader' />
     </template>
@@ -32,7 +36,8 @@ const props = withDefaults(defineProps<{
   contentWidth?:'Fluid' | 'Fixed',
   siderWidth?: number,
   suppressSiderWhenMenuEmpty?: boolean,
-  menuData?: MenuItem[]
+  menuData?: MenuItem[],
+  menuSelectedIndex:string
 }>(), {
   title: 'lc pro',
   layout: 'side',

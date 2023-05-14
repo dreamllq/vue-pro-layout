@@ -3,7 +3,7 @@
     <div class='img flex-none'>
       <img src='@/assets/logo.svg' alt='logo'>
     </div>
-    <div class='title flex-item'>
+    <div v-if='menuIsCollapse === false' class='title flex-item'>
       {{ config.title }}
     </div>
   </div>
@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { useState } from '@/use-state';
 
-const { config } = useState();
+const { config, menuIsCollapse } = useState();
 </script>
 
 <style scoped lang="scss">
@@ -32,6 +32,7 @@ const { config } = useState();
     line-height: 24px;
     margin-inline-start: 6px;
     vertical-align: top;
+    white-space: nowrap;
   }
 }
 </style>

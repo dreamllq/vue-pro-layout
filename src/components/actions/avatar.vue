@@ -5,7 +5,7 @@
         <el-avatar size='small' :src='avatarUrl' />
       </div>
     </div>
-    <div class='flex-none name'>
+    <div v-if='menuIsCollapse === false' class='flex-none name'>
       {{ name }}
     </div>
   </div>
@@ -13,6 +13,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useState } from '@/use-state';
+
+const { menuIsCollapse } = useState();
+
 const avatarUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
 const name = ref('name');
 </script>
