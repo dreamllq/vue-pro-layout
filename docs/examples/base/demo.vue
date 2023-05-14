@@ -1,6 +1,15 @@
 <template>
+  <el-form>
+    <el-form-item label='layout'>
+      <el-radio-group v-model='layout'>
+        <el-radio-button label='mix' />
+        <el-radio-button label='side' />
+        <el-radio-button label='top' />
+      </el-radio-group>
+    </el-form-item>
+  </el-form>
   <div style='height: 900px;border: 1px solid #000000;'>
-    <pro-layout :menu='menu' @menu-select='onMenuSelect'>
+    <pro-layout :menu='menu' :layout='layout' @menu-select='onMenuSelect'>
       <el-button @click='menu.index = "welcome1-1"'>
         首页1-1
       </el-button>
@@ -53,8 +62,7 @@ const menuData = [
   }
 ];
 
-const menuSelectedIndex = ref('welcome1-2');
-
+const layout = ref('side');
 const menu = reactive({
   data: menuData,
   index: 'welcome1-2'

@@ -26,7 +26,6 @@ import { useSlots, computed } from 'vue';
 
 const { config } = useState();
 
-const { layout } = config.value;
 const slots = useSlots();
 
 const componentMap = {
@@ -35,7 +34,7 @@ const componentMap = {
   top: TopLayout
 };
 
-const layoutComponent = computed(() => componentMap[layout]);
+const layoutComponent = computed(() => componentMap[config.value.layout]);
 </script>
 
 <style scoped>

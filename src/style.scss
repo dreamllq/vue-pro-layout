@@ -6,11 +6,9 @@
 
 .flex {
   display: flex;
-  width: 100%;
 
   &.flex-column {
     flex-direction: column;
-    height: 100%;;
   }
 
   .flex-item {
@@ -27,6 +25,7 @@
 body {
   --el-menu-bg-color: var(--el-color-primary);
   --el-menu-text-color: #EEEEEE;
+  --el-menu-hover-text-color: var(--el-menu-text-color);
   --el-menu-active-color: #FFFFFF;
   --el-menu-hover-bg-color: rgb(0 0 0 / 6%);
   --el-menu-active-bg-color: #1677FF;
@@ -37,6 +36,26 @@ body {
 
 .el-menu--popup {
   padding: 0 4px;
+}
+
+.el-menu.el-menu--horizontal {
+  align-items: center;
+
+  .el-menu-item {
+    margin: 0 4px;
+  }
+  
+  .el-sub-menu {
+    margin: 0 4px;
+  }
+
+  &>.el-sub-menu .el-sub-menu__title {
+    height: var(--el-menu-item-height);
+
+    &:hover {
+      background-color: var(--el-menu-hover-bg-color) !important;
+    }
+  }
 }
 
 .el-menu, .el-menu--popup {

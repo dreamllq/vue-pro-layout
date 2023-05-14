@@ -1,6 +1,7 @@
 <template>
   <el-menu
     ref='menu'
+    :mode='mode'
     :collapse='isCollapse'
     :default-active='menuIndex'
     style='border: 0;'
@@ -10,13 +11,11 @@
       <sub-menu
         v-if='Array.isArray(item.children) && item.children.length > 0'
         :key='item.key'
-        popper-class='layout-popper'
         :menu-item='item'
       />
       <el-menu-item
         v-else
         :key='item.key.toString()'
-        :route='{ name: item.key }'
         :index='item.key'
       >
         <el-icon v-if='item.icon'>
@@ -50,6 +49,10 @@ defineProps({
   isCollapse: {
     type: Boolean,
     default: false
+  },
+  mode: {
+    type: String,
+    default: 'vertical'
   }
 });
 

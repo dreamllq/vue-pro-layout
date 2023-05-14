@@ -11,14 +11,13 @@ export default defineComponent({
   },
   methods: {
     renderSubMenu(menuItem) {
-      return <el-sub-menu index={menuItem.key} popper-class='layout-popper'>
+      return <el-sub-menu index={menuItem.key}>
         {{
           default: () => (menuItem.children.map(item => {
             if (Array.isArray(item.children) && item.children.length > 0) {
               return this.renderSubMenu(item);
             } else {
               return <el-menu-item
-                route={{ name: item.key }}
                 index={item.key}
               >
                 {{ default: () => item.label }}

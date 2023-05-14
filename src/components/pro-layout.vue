@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { withDefaults, useSlots } from 'vue';
+import { withDefaults, useSlots, watch } from 'vue';
 import { useState } from '@/use-state';
 import Layout from './layout/index.vue';
 import { MenuProps } from '@/types';
@@ -44,6 +44,10 @@ const props = withDefaults(defineProps<{
   siderWidth: 256,
   menuData: () => []
 });
+
+watch(() => props, () => {
+  setConfig(props);
+}, { deep: true });
 
 const emit = defineEmits(['menu-select']);
 

@@ -2,8 +2,8 @@
   <div class='lc-pro-layout side'>
     <el-container style='height: 100%;'>
       <el-aside :width='`${siderWidth}px`' style='overflow: revert; transition: all .5s ease 0s;'>
-        <div class='aside-container flex flex-column'>
-          <div class='logo-container flex-none flex container-item'>
+        <div class='aside-container flex flex-column' style='height: 100%;'>
+          <div class='logo-container flex-none container-item'>
             <layout-logo />
           </div>
           <div v-if='slots.menuHeader' class='menu-header-container flex-none container-item'>
@@ -24,7 +24,7 @@
               </template>
             </vertical-actions>
           </div>
-          <div v-if='slots.menuFooter' class='class-menu-footer-container flex-none container-item'>
+          <div v-if='slots.menuFooter' class='menu-footer-container flex-none container-item'>
             <slot name='menuFooter' />
           </div>
           <div class='aside-collapsed-button' @click='onCollapsed'>
