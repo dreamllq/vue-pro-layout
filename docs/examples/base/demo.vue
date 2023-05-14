@@ -1,6 +1,6 @@
 <template>
   <div style='height: 900px;border: 1px solid #000000;'>
-    <pro-layout :menu-data='menuData' />
+    <pro-layout :menu-data='menuData' @menu-select='onMenuSelect' />
   </div>
 </template>
 
@@ -44,6 +44,10 @@ const menuData = [
     'children': null
   }
 ];
+
+const onMenuSelect = (...args) => {
+  console.log(args);
+};
 </script>
 
 <style scoped>

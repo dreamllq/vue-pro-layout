@@ -1,10 +1,10 @@
 <template>
   <el-menu
     ref='menu'
-    :router='true'
     :collapse='isCollapse'
     :default-active='menuIndex'
     style='border: 0;'
+    @select='onSelect'
   >
     <template v-for='item in menuData'>
       <sub-menu
@@ -34,6 +34,9 @@
 import { PropType, ref } from 'vue';
 import SubMenu from './sub-menu.tsx';
 import { MenuItem } from '@/types';
+import { useBus } from '@/use-bus';
+
+const bus = useBus();
 
 const props = defineProps({
   menuData: {
@@ -47,6 +50,11 @@ const props = defineProps({
 });
 
 const isCollapse = ref(false);
+
+const onSelect = (...args) => {
+  bus.emit('menu-select', ...args);
+};
+
 
 const handleCollapse = (collapse) => {
   isCollapse.value = collapse;
