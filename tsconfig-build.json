@@ -11,5 +11,8 @@
     "docs/*.d.ts",
     "docs/*.tsx",
     "docs/*.vue"
-  ]
+  ],
+  "compilerOptions": {
+    "outDir": "dist"
+  }
 }

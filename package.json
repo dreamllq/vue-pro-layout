@@ -18,7 +18,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "npm run docs:dev",
-    "build": "vite build && vue-tsc -p tsconfig-build.json",
+    "build": "vite build && vue-tsc -p tsconfig-build.json && tsc-alias -p tsconfig-build.json",
     "preview": "vite preview",
     "postversion": "git push && git push --tags && npm run docs:build && npm run build && npm publish --registry=https://registry.npmjs.org/",
     "test": "jest",
@@ -56,6 +56,7 @@
     "stylelint-config-standard": "^30.0.1",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.6",
     "typescript": "^5.0.2",
     "uuid": "^9.0.0",
     "vite": "^4.3.2",
