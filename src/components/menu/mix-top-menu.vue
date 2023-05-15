@@ -21,7 +21,7 @@ const onSelect = (index) => {
   const key = getSideMenuDataFirst(index);
 
   if (key) {
-    config.value!.menu.index = index;
+    config.value!.menu.index = key;
     bus.emit('menu-select', key);
   } else {
     config.value!.menu.index = index;

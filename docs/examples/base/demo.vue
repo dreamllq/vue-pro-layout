@@ -63,11 +63,13 @@ const menuData = [
     'children': [
       {
         'key': 'welcome1-1',
+        'icon': 'House',
         'label': '首页1-1',
         'children': null
       },
       {
         'key': 'welcome1-2',
+        'icon': 'House',
         'label': '首页1-2',
         'children': null
       }
