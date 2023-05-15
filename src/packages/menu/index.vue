@@ -62,12 +62,5 @@ const onSelect = (...args) => {
 </script>
 
 <style lang="scss">
-.layout-popper {
-  position: fixed !important;
 
-  >.el-menu--popup {
-    max-height: 400px;
-    overflow-y: auto;
-  }
-}
 </style>
