@@ -30,7 +30,8 @@ export default defineConfig({
         'rxjs',
         '@vueuse/core',
         'lc-vue-biz-menu',
-        'eventemitter3'
+        'eventemitter3',
+        '@vueuse/shared'
       ],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
@@ -42,7 +43,8 @@ export default defineConfig({
           'rxjs': 'rxjs',
           '@vueuse/core': '@vueuse/core',
           'lc-vue-biz-menu': 'lc-vue-biz-menu',
-          'eventemitter3': 'eventemitter3'
+          'eventemitter3': 'eventemitter3',
+          '@vueuse/shared': '@vueuse/shared'
         },
         exports: 'named'
       }

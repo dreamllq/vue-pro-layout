@@ -85,7 +85,10 @@ const onCollapsed = () => {
     margin-top: 0;
     display: flex;
   }
- 
+
+  .menu-container {
+    overflow: auto;
+  }
 }
 
 .container-item {

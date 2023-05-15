@@ -100,6 +100,10 @@ const onCollapsed = () => {
     margin: 4px 0;
     box-sizing: border-box;
   }
+
+  .menu-container {
+    overflow: auto;
+  }
 }
 
 .aside-collapsed-button {
