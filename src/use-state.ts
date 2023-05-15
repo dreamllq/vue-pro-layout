@@ -1,21 +1,16 @@
 import { computed, ref } from 'vue';
-import { createGlobalState } from '@vueuse/core';
 import { LayoutProps } from './types';
 import { cloneDeep } from 'lodash';
+import { createInjectionState } from '@vueuse/shared';
 
-export const useState = createGlobalState(
-  () => {
-    const config = ref<LayoutProps>();
+const [useProvideState, useState] = createInjectionState((props: LayoutProps) => {
+  const config = ref<LayoutProps>(cloneDeep(props));
+  const siderWidth = computed(() => config.value?.collapsed ? '64' : config.value?.siderWidth);
 
-    const setConfig = (c:LayoutProps) => {
-      config.value = cloneDeep(c);
-    };
+  return {
+    config,
+    siderWidth
+  };
+});
 
-    const siderWidth = computed(() => config.value?.collapsed ? '64' : config.value?.siderWidth);
-    return {
-      config,
-      siderWidth,
-      setConfig 
-    };
-  }
-);
+export { useProvideState, useState };

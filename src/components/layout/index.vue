@@ -27,8 +27,10 @@ import MixLayout from './mix.vue';
 import SideLayout from './side.vue';
 import TopLayout from './top.vue';
 import { useSlots, computed } from 'vue';
+import { useMixMenuProvideState } from '@/use-mix-menu-state';
 
-const { config } = useState();
+useMixMenuProvideState();
+const { config } = useState()!;
 
 const slots = useSlots();
 
@@ -39,6 +41,8 @@ const componentMap = {
 };
 
 const layoutComponent = computed(() => componentMap[config.value!.layout]);
+
+defineExpose({ getConfig: () => config });
 </script>
 
 <style scoped>

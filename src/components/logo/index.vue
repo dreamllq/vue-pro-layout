@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { useState } from '@/use-state';
 
-const { config } = useState();
+const { config } = useState()!;
 
 defineProps({
   menuIsCollapse: {

@@ -13,9 +13,9 @@ import { useState } from '@/use-state';
 import { useBus } from '@/use-bus';
 import { useMixMenuState } from '@/use-mix-menu-state';
 
-const { config } = useState();
+const { config } = useState()!;
 const bus = useBus();
-const { sideMenuData } = useMixMenuState();
+const { sideMenuData } = useMixMenuState()!;
 
 
 const onSelect = (index) => {

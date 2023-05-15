@@ -38,7 +38,7 @@ defineProps({
   }
 });
 
-const { config } = useState();
+const { config } = useState()!;
 const slots = useSlots();
 const bus = useBus();
 

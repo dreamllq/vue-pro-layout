@@ -61,7 +61,7 @@ import SideMenu from '@/components/menu/side-menu.vue';
 import HorizontalActions from '@/components/actions/horizontal.vue';
 import VerticalActions from '@/components/actions/vertical.vue';
 
-const { siderWidth, config } = useState();
+const { siderWidth, config } = useState()!;
 const slots = useSlots();
 
 const onCollapsed = () => {

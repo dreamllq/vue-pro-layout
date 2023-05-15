@@ -18,7 +18,7 @@ import { useSlots } from 'vue';
 import { useState } from '@/use-state';
 import Avatar from './avatar.vue';
 
-const { config } = useState();
+const { config } = useState()!;
 const slots = useSlots();
 </script>
 

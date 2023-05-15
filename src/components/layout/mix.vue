@@ -62,8 +62,8 @@ import HorizontalActions from '@/components/actions/horizontal.vue';
 import MixTopMenu from '@/components/menu/mix-top-menu.vue';
 import MixSideMenu from '@/components/menu/mix-side-menu.vue';
 
-const { siderWidth, config } = useState();
-const { sideMenuData } = useMixMenuState();
+const { siderWidth, config } = useState()!;
+const { sideMenuData } = useMixMenuState()!;
 const slots = useSlots();
 
 const showSide = computed(() => !(config.value!.suppressSiderWhenMenuEmpty === true && sideMenuData.value.length === 0));

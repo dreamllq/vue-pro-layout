@@ -12,7 +12,7 @@ import { BizMenu } from 'lc-vue-biz-menu';
 import { useState } from '@/use-state';
 import { useBus } from '@/use-bus';
 
-const { config } = useState();
+const { config } = useState()!;
 const bus = useBus();
 
 const onSelect = (index) => {
