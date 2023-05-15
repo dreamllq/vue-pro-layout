@@ -18,7 +18,8 @@ export default defineConfig({
       'lodash',
       'vue',
       'uuid',
-      'moment'
+      'moment',
+      'lc-vue-biz-menu'
     ] 
   }
 });

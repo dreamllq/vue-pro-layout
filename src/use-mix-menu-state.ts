@@ -7,7 +7,7 @@ export const useMixMenuState = createGlobalState(
   () => {
     const { config } = useState();
 
-    const topMenuData = computed(() => config.value.menu.data.map(item => ({
+    const topMenuData = computed(() => config.value!.menu.data.map(item => ({
       key: item.key,
       label: item.label,
       icon: item.icon
@@ -25,7 +25,7 @@ export const useMixMenuState = createGlobalState(
         return [item.key, ...childrenKeys];
       };
     
-      return config.value.menu.data.reduce((acc, item) => {
+      return config.value!.menu.data.reduce((acc, item) => {
         acc[item.key] = getChildrenKeys(item);
         return acc;
       }, {});
@@ -35,14 +35,14 @@ export const useMixMenuState = createGlobalState(
       let index = '';
     
       Object.keys(firstLevelMenuIndexMap.value).forEach((key) => {
-        if (firstLevelMenuIndexMap.value[key].includes(config.value.menu.index)) {
+        if (firstLevelMenuIndexMap.value[key].includes(config.value!.menu.index)) {
           index = key;
         }
       });
       return index;
     });
 
-    const firstLevelMenuDataMap = computed(() => config.value.menu.data.reduce<{[index: string]: MenuItem[] | undefined}>((acc, item) => {
+    const firstLevelMenuDataMap = computed(() => config.value!.menu.data.reduce<{[index: string]: MenuItem[] | undefined}>((acc, item) => {
       acc[item.key] = item.children;
       return acc;
     }, {}));

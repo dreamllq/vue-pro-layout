@@ -1,5 +1,5 @@
 <template>
-  <lc-menu
+  <biz-menu
     :menu-data='topMenuData'
     :menu-index='topMenuIndex'
     mode='horizontal'
@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import LcMenu from '@/packages/menu/index.vue';
+import { BizMenu } from 'lc-vue-biz-menu';
 import { useBus } from '@/use-bus';
 import { useMixMenuState } from '@/use-mix-menu-state';
 import { useState } from '@/use-state';

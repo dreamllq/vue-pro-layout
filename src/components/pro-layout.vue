@@ -28,6 +28,7 @@ import { useState } from '@/use-state';
 import Layout from './layout/index.vue';
 import { AvatarProps, MenuProps } from '@/types';
 import { useBus } from '@/use-bus';
+import { cloneDeep } from 'lodash';
 
 const slots = useSlots();
 const bus = useBus();
@@ -51,13 +52,13 @@ const props = withDefaults(defineProps<{
   menuData: () => []
 });
 
-watch(() => props, () => {
-  setConfig(props);
-}, { deep: true });
+setConfig(props);
+
+watch(() => props.menu.data, () => config.value!.menu.data = cloneDeep(props.menu.data), { deep: true });
+watch(() => props.suppressSiderWhenMenuEmpty, () => config.value!.suppressSiderWhenMenuEmpty = props.suppressSiderWhenMenuEmpty);
+watch(() => props.layout, () => config.value!.layout = props.layout);
 
 const emit = defineEmits(['menu-select', 'avatar-command']);
-
-setConfig(props);
 
 bus.on('menu-select', (...args) => {
   emit('menu-select', ...args);
@@ -65,6 +66,19 @@ bus.on('menu-select', (...args) => {
 
 bus.on('avatar-command', (...args) => {
   emit('avatar-command', ...args);
+});
+
+const setMenuIndex = (index: string) => {
+  config.value!.menu.index = index;
+};
+
+const setCollapsed = (collapsed:boolean) => {
+  config.value!.collapsed = collapsed;
+};
+
+defineExpose({
+  setMenuIndex,
+  setCollapsed 
 });
 
 </script>

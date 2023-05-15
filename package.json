@@ -43,6 +43,7 @@
     "eventemitter3": "^5.0.1",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
+    "lc-vue-biz-menu": "^1.0.0",
     "lint-staged": "^13.2.2",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
@@ -66,6 +67,7 @@
     "vue-tsc": "^1.4.2"
   },
   "peerDependencies": {
+    "lc-vue-biz-menu": "*",
     "vue": "3.x"
   },
   "author": {

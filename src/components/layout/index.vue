@@ -38,7 +38,7 @@ const componentMap = {
   top: TopLayout
 };
 
-const layoutComponent = computed(() => componentMap[config.value.layout]);
+const layoutComponent = computed(() => componentMap[config.value!.layout]);
 </script>
 
 <style scoped>

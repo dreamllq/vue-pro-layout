@@ -66,7 +66,7 @@ const { siderWidth, config } = useState();
 const { sideMenuData } = useMixMenuState();
 const slots = useSlots();
 
-const showSide = computed(() => !(config.value.suppressSiderWhenMenuEmpty === true && sideMenuData.value.length === 0));
+const showSide = computed(() => !(config.value!.suppressSiderWhenMenuEmpty === true && sideMenuData.value.length === 0));
 
 const onCollapsed = () => {
   config.value!.collapsed = !config.value?.collapsed;

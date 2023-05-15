@@ -15,16 +15,17 @@
   </el-form>
   <div style='height: 900px;border: 1px solid #000000;'>
     <pro-layout
+      ref='layoutRef'
       :menu='menu'
       :avatar='avatar'
       :layout='layout'
       :suppress-sider-when-menu-empty='suppressSiderWhenMenuEmpty'
       @avatar-command='handleAvatarCommand'
       @menu-select='onMenuSelect'>
-      <el-button @click='menu.index = "welcome1-1"'>
+      <el-button @click='jump("welcome1-1")'>
         首页1-1
       </el-button>
-      <el-button @click='menu.index = "welcome1"'>
+      <el-button @click='jump("welcome1")'>
         首页1
       </el-button>
 
@@ -95,6 +96,7 @@ const menuData = [
   }
 ];
 
+const layoutRef = ref();
 const layout = ref('mix');
 const suppressSiderWhenMenuEmpty = ref(false);
 const menu = reactive({
@@ -112,6 +114,10 @@ const onMenuSelect = (...args) => {
 
 const handleAvatarCommand = (...args) => {
   console.log('handleAvatarCommand', args);
+};
+
+const jump = (index: string) => {
+  layoutRef.value.setMenuIndex(index);
 };
 </script>
 
