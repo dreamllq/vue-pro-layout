@@ -77,7 +77,6 @@ const onCollapsed = () => {
   padding: 0 8px;
   box-sizing: border-box;
   position: relative;
-  overflow: hidden;
 
   .logo-container {
     height: 55px;
