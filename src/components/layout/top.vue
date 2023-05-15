@@ -4,7 +4,9 @@
       <el-header height='55px' style='padding: 0;' class='layout-header'>
         <div class='header-container flex'>
           <div class='logo-container flex-none flex container-item'>
-            <layout-logo />
+            <slot name='logo'>
+              <layout-logo />
+            </slot>
           </div>
           <div v-if='slots.menuHeader' class='menu-header-container flex-none container-item'>
             <slot name='menuHeader' />

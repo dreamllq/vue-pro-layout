@@ -3,6 +3,12 @@
     <template #default>
       <slot />
     </template>
+
+    
+    <template v-if='slots.logo' #logo>
+      <slot name='logo' :is-collapse='config.collapsed' />
+    </template>
+
     <template v-if='slots.menuHeader' #menuHeader>
       <slot name='menuHeader' />
     </template>

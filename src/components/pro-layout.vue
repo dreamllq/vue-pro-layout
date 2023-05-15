@@ -4,6 +4,10 @@
       <slot />
     </template>
 
+    <template v-if='slots.logo' #logo='scope'>
+      <slot name='logo' v-bind='scope' />
+    </template>
+
     <template v-if='slots.menuHeader' #menuHeader>
       <slot name='menuHeader' />
     </template>

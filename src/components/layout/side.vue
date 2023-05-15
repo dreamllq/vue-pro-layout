@@ -4,7 +4,9 @@
       <el-aside :width='`${siderWidth}px`' style='overflow: revert; transition: all .5s ease 0s;'>
         <div class='aside-container flex flex-column' style='height: 100%;'>
           <div class='logo-container flex-none container-item'>
-            <layout-logo :menu-is-collapse='config?.collapsed' />
+            <slot name='logo'>
+              <layout-logo :menu-is-collapse='config?.collapsed' />
+            </slot>
           </div>
           <div v-if='slots.menuHeader' class='menu-header-container flex-none container-item'>
             <slot name='menuHeader' />
