@@ -12,6 +12,11 @@
         suppressSiderWhenMenuEmpty
       </el-checkbox>
     </el-form-item>
+    <el-form-item>
+      <el-checkbox v-model='hiddenCollapsedButton'>
+        hiddenCollapsedButton
+      </el-checkbox>
+    </el-form-item>
   </el-form>
   <div style='height: 900px;border: 1px solid #000000;'>
     <pro-layout
@@ -20,6 +25,7 @@
       :avatar='avatar'
       :layout='layout'
       :suppress-sider-when-menu-empty='suppressSiderWhenMenuEmpty'
+      :hidden-collapsed-button='hiddenCollapsedButton'
       @avatar-command='handleAvatarCommand'
       @menu-select='onMenuSelect'>
       <el-button @click='jump("welcome1-1")'>
@@ -99,6 +105,7 @@ const menuData = [
 const layoutRef = ref();
 const layout = ref('mix');
 const suppressSiderWhenMenuEmpty = ref(false);
+const hiddenCollapsedButton = ref(false);
 const menu = reactive({
   data: menuData,
   index: 'welcome1-2'

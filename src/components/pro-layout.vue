@@ -42,7 +42,8 @@ const props = withDefaults(defineProps<{
   suppressSiderWhenMenuEmpty?: boolean,
   menu: MenuProps,
   avatar: AvatarProps,
-  collapsed?: boolean
+  collapsed?: boolean,
+  hiddenCollapsedButton?: boolean
 }>(), {
   title: 'lc pro',
   layout: 'side',
@@ -60,6 +61,7 @@ const layoutRef = ref();
 watch(() => props.menu.data, () => layoutRef.value.getConfig().value!.menu.data = cloneDeep(props.menu.data), { deep: true });
 watch(() => props.suppressSiderWhenMenuEmpty, () => layoutRef.value.getConfig().value!.suppressSiderWhenMenuEmpty = props.suppressSiderWhenMenuEmpty);
 watch(() => props.layout, () => layoutRef.value.getConfig().value!.layout = props.layout);
+watch(() => props.hiddenCollapsedButton, () => layoutRef.value.getConfig().value!.hiddenCollapsedButton = props.hiddenCollapsedButton);
 
 bus.on('menu-select', (...args) => {
   emit('menu-select', ...args);

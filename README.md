@@ -149,6 +149,7 @@ const jump = (index: string) => {
 | menu | 菜单数据 | MenuProps | - |
 | avatar | 头像数据 | AvatarProps | - |
 | collapsed | 是否折叠 | boolean | false | 
+| hiddenCollapsedButton | 是否隐藏折叠按钮 | boolean | false |
 
 ### Events
 

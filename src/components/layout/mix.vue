@@ -33,7 +33,7 @@
             <div v-if='slots.menuFooter' class='menu-footer-container flex-none container-item'>
               <slot name='menuFooter' />
             </div>
-            <div class='aside-collapsed-button' @click='onCollapsed'>
+            <div v-if='!config.hiddenCollapsedButton' class='aside-collapsed-button' @click='onCollapsed'>
               <el-icon>
                 <template v-if='config?.collapsed'>
                   <component is='ArrowRight' />
