@@ -8,7 +8,7 @@
     </template>
 
     <template v-if='slots.actions' #actions>
-      <slot name='actions' />
+      <slot name='actions' :is-collapse='config.collapsed' />
     </template>
     
     <template v-if='slots.avatarDropdown' #avatarDropdown>

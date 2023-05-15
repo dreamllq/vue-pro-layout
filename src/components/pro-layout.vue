@@ -8,8 +8,8 @@
       <slot name='menuHeader' />
     </template>
 
-    <template v-if='slots.actions' #actions>
-      <slot name='actions' :is-collapse='config?.collapsed' />
+    <template v-if='slots.actions' #actions='scope'>
+      <slot name='actions' v-bind='scope' />
     </template>
     
     <template v-if='slots.avatarDropdown' #avatarDropdown>
