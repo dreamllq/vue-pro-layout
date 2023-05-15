@@ -17,10 +17,16 @@
               <template #default>
                 <slot name='actions' />
               </template>
+              <template v-if='slots.avatarDropdown' #avatarDropdown>
+                <slot name='avatarDropdown' />
+              </template>
             </horizontal-actions>
             <vertical-actions v-else>
               <template #default>
                 <slot name='actions' />
+              </template>
+              <template v-if='slots.avatarDropdown' #avatarDropdown>
+                <slot name='avatarDropdown' />
               </template>
             </vertical-actions>
           </div>

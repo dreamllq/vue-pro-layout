@@ -10,6 +10,10 @@
     <template v-if='slots.actions' #actions>
       <slot name='actions' />
     </template>
+    
+    <template v-if='slots.avatarDropdown' #avatarDropdown>
+      <slot name='avatarDropdown' />
+    </template>
 
     <template v-if='slots.menuFooter' #menuFooter>
       <slot name='menuFooter' />

@@ -14,6 +14,9 @@
               <template #default>
                 <slot name='actions' />
               </template>
+              <template v-if='slots.avatarDropdown' #avatarDropdown>
+                <slot name='avatarDropdown' />
+              </template>
             </horizontal-actions>
           </div>
         </div>

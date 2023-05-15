@@ -13,7 +13,7 @@ export const useState = createGlobalState(
 
     const siderWidth = computed(() => menuIsCollapse.value ? '64' : config.value?.siderWidth);
     return {
-      config: config as Ref<Readonly<LayoutProps>>,
+      config,
       menuIsCollapse,
       siderWidth,
       setConfig 

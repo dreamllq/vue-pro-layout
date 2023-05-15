@@ -11,6 +11,10 @@
     <template v-if='slots.actions' #actions>
       <slot name='actions' :is-collapse='menuIsCollapse' />
     </template>
+    
+    <template v-if='slots.avatarDropdown' #avatarDropdown>
+      <slot name='avatarDropdown' />
+    </template>
 
     <template v-if='slots.menuFooter' #menuFooter>
       <slot name='menuFooter' />
@@ -22,7 +26,7 @@
 import { withDefaults, useSlots, watch } from 'vue';
 import { useState } from '@/use-state';
 import Layout from './layout/index.vue';
-import { MenuProps } from '@/types';
+import { AvatarProps, MenuProps } from '@/types';
 import { useBus } from '@/use-bus';
 
 const slots = useSlots();
@@ -36,7 +40,8 @@ const props = withDefaults(defineProps<{
   contentWidth?:'Fluid' | 'Fixed',
   siderWidth?: number,
   suppressSiderWhenMenuEmpty?: boolean,
-  menu: MenuProps
+  menu: MenuProps,
+  avatar: AvatarProps
 }>(), {
   title: 'lc pro',
   layout: 'side',
@@ -49,12 +54,16 @@ watch(() => props, () => {
   setConfig(props);
 }, { deep: true });
 
-const emit = defineEmits(['menu-select']);
+const emit = defineEmits(['menu-select', 'avatar-command']);
 
 setConfig(props);
 
 bus.on('menu-select', (...args) => {
   emit('menu-select', ...args);
+});
+
+bus.on('avatar-command', (...args) => {
+  emit('avatar-command', ...args);
 });
 
 </script>

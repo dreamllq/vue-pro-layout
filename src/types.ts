@@ -6,7 +6,8 @@ export interface LayoutProps {
   contentWidth:'Fluid' | 'Fixed',
   siderWidth: number,
   suppressSiderWhenMenuEmpty: boolean,
-  menu: MenuProps
+  menu: MenuProps,
+  avatar: AvatarProps
 }
 
 export type LayoutType = 'side' | 'top' | 'mix'
@@ -22,4 +23,9 @@ export interface MenuItem {
 export interface MenuProps {
   data: MenuItem[],
   index: string
+}
+
+export interface AvatarProps{
+  src: string,
+  title: string
 }

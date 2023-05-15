@@ -1,19 +1,35 @@
 <template>
-  <div class='avatar-item flex'>
+  <el-dropdown v-if='slots.dropdown' @command='handleCommand'>
+    <div class='avatar-item flex'>
+      <div class='flex-none'>
+        <div class='flex'>
+          <el-avatar size='small' :src='config.avatar.src' />
+        </div>
+      </div>
+      <div v-if='menuIsCollapse === false' class='flex-none name'>
+        {{ config.avatar.title }}
+      </div>
+    </div>
+    <template #dropdown>
+      <slot name='dropdown' />
+    </template>
+  </el-dropdown>
+  <div v-else class='avatar-item flex'>
     <div class='flex-none'>
       <div class='flex'>
-        <el-avatar size='small' :src='avatarUrl' />
+        <el-avatar size='small' :src='config.avatar.src' />
       </div>
     </div>
     <div v-if='menuIsCollapse === false' class='flex-none name'>
-      {{ name }}
+      {{ config.avatar.title }}
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
+import { useSlots } from 'vue';
+import { useState } from '@/use-state';
+import { useBus } from '@/use-bus';
 
 defineProps({
   menuIsCollapse: {
@@ -22,8 +38,14 @@ defineProps({
   }
 });
 
-const avatarUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
-const name = ref('name');
+const { config } = useState();
+const slots = useSlots();
+const bus = useBus();
+
+const handleCommand = (...args) => {
+  bus.emit('avatar-command', ...args);
+};
+
 </script>
 
 <style scoped lang="scss">
@@ -31,6 +53,8 @@ const name = ref('name');
   padding: 8px;
   border-radius: 4px;
   cursor: default;
+  align-items: center;
+
 
   &:hover {
     background-color: rgb(0 0 0 / 6%);

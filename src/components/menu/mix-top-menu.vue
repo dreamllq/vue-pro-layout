@@ -7,24 +7,24 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import LcMenu from '@/packages/menu/index.vue';
-import { useState } from '@/use-state';
 import { useBus } from '@/use-bus';
 import { useMixMenuState } from '@/use-mix-menu-state';
+import { useState } from '@/use-state';
 
-const { config } = useState();
 const bus = useBus();
+const { config } = useState();
 
 const { topMenuData, topMenuIndex, getSideMenuDataFirst } = useMixMenuState();
 
 const onSelect = (index) => {
   const key = getSideMenuDataFirst(index);
-  console.log(key);
 
   if (key) {
+    config.value!.menu.index = index;
     bus.emit('menu-select', key);
   } else {
+    config.value!.menu.index = index;
     bus.emit('menu-select', index);
   }
 };

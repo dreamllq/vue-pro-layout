@@ -15,6 +15,7 @@ const { config } = useState();
 const bus = useBus();
 
 const onSelect = (index) => {
+  config.value!.menu.index = index;
   bus.emit('menu-select', index);
 };
 </script>

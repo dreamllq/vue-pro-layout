@@ -16,8 +16,10 @@
   <div style='height: 900px;border: 1px solid #000000;'>
     <pro-layout
       :menu='menu'
+      :avatar='avatar'
       :layout='layout'
       :suppress-sider-when-menu-empty='suppressSiderWhenMenuEmpty'
+      @avatar-command='handleAvatarCommand'
       @menu-select='onMenuSelect'>
       <el-button @click='menu.index = "welcome1-1"'>
         首页1-1
@@ -25,6 +27,26 @@
       <el-button @click='menu.index = "welcome1"'>
         首页1
       </el-button>
+
+      <template #avatarDropdown>
+        <el-dropdown-menu>
+          <el-dropdown-item command='a'>
+            Action 1
+          </el-dropdown-item>
+          <el-dropdown-item command='b'>
+            Action 2
+          </el-dropdown-item>
+          <el-dropdown-item command='c'>
+            Action 3
+          </el-dropdown-item>
+          <el-dropdown-item command='d' disabled>
+            Action 4
+          </el-dropdown-item>
+          <el-dropdown-item command='e' divided>
+            Action 5
+          </el-dropdown-item>
+        </el-dropdown-menu>
+      </template>
     </pro-layout>
   </div>
 </template>
@@ -77,11 +99,17 @@ const menu = reactive({
   data: menuData,
   index: 'welcome1-2'
 });
-
+const avatar = reactive({
+  src: 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+  title: 'name'
+});
 
 const onMenuSelect = (...args) => {
-  menu.index = args[0];
-  console.log(args);
+  console.log('onMenuSelect', args);
+};
+
+const handleAvatarCommand = (...args) => {
+  console.log('handleAvatarCommand', args);
 };
 </script>
 

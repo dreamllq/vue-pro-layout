@@ -6,7 +6,9 @@
           <div class='logo-container flex-none flex container-item'>
             <layout-logo />
           </div>
-          <div class='menu-header-container flex-none container-item' />
+          <div v-if='slots.menuHeader' class='menu-header-container flex-none container-item'>
+            <slot name='menuHeader' />
+          </div>
           <div class='menu-container flex-item container-item'>
             <top-menu />
           </div>
@@ -15,9 +17,14 @@
               <template #default>
                 <slot name='actions' />
               </template>
+              <template v-if='slots.avatarDropdown' #avatarDropdown>
+                <slot name='avatarDropdown' />
+              </template>
             </horizontal-actions>
           </div>
-          <div class='menu-footer-container flex-none container-item' />
+          <div v-if='slots.menuFooter' class='menu-footer-container flex-none container-item'>
+            <slot name='menuFooter' />
+          </div>
         </div>
       </el-header>
       <el-main>
@@ -28,9 +35,11 @@
 </template>
 
 <script setup lang="ts">
+import { useSlots } from 'vue';
 import LayoutLogo from '@/components/logo/index.vue';
 import HorizontalActions from '@/components/actions/horizontal.vue';
 import TopMenu from '@/components/menu/top-menu.vue';
+const slots = useSlots();
 
 </script>
 
