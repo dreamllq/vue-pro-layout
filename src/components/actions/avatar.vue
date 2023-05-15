@@ -3,11 +3,11 @@
     <div class='avatar-item flex'>
       <div class='flex-none'>
         <div class='flex'>
-          <el-avatar size='small' :src='config?.avatar.src' />
+          <el-avatar size='small' :src='config.avatar!.src' />
         </div>
       </div>
       <div v-if='menuIsCollapse === false' class='flex-none name'>
-        {{ config?.avatar.title }}
+        {{ config.avatar!.title }}
       </div>
     </div>
     <template #dropdown>
@@ -17,11 +17,11 @@
   <div v-else class='avatar-item flex'>
     <div class='flex-none'>
       <div class='flex'>
-        <el-avatar size='small' :src='config?.avatar.src' />
+        <el-avatar size='small' :src='config.avatar!.src' />
       </div>
     </div>
     <div v-if='menuIsCollapse === false' class='flex-none name'>
-      {{ config?.avatar.title }}
+      {{ config.avatar!.title }}
     </div>
   </div>
 </template>
