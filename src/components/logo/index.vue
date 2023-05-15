@@ -12,7 +12,14 @@
 <script setup lang="ts">
 import { useState } from '@/use-state';
 
-const { config, menuIsCollapse } = useState();
+const { config } = useState();
+
+defineProps({
+  menuIsCollapse: {
+    type: Boolean,
+    default: false
+  }
+});
 </script>
 
 <style scoped lang="scss">

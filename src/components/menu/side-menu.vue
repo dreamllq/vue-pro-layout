@@ -3,22 +3,21 @@
     :menu-data='config.menu.data'
     :menu-index='config.menu.index'
     :is-collapse='menuIsCollapse'
-    :mode='mode' />
+    mode='vertical'
+    @select='onSelect' />
 </template>
 
 <script setup lang="ts">
-import LcMenu from './menu.vue';
+import LcMenu from '@/packages/menu/index.vue';
 import { useState } from '@/use-state';
+import { useBus } from '@/use-bus';
 
 const { config, menuIsCollapse } = useState();
+const bus = useBus();
 
-defineProps({
-  mode: {
-    type: String,
-    default: 'vertical'
-  }
-});
-
+const onSelect = (index) => {
+  bus.emit('menu-select', index);
+};
 </script>
 
 <style scoped>

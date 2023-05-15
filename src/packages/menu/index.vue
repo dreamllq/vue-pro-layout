@@ -33,9 +33,6 @@
 import { PropType } from 'vue';
 import SubMenu from './sub-menu.tsx';
 import { MenuItem } from '@/types';
-import { useBus } from '@/use-bus';
-
-const bus = useBus();
 
 defineProps({
   menuData: {
@@ -56,8 +53,10 @@ defineProps({
   }
 });
 
+const emit = defineEmits(['select']);
+
 const onSelect = (...args) => {
-  bus.emit('menu-select', ...args);
+  emit('select', ...args);
 };
 
 </script>

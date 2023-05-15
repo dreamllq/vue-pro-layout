@@ -8,7 +8,7 @@
           </div>
           <div class='menu-header-container flex-none container-item' />
           <div class='menu-container flex-item container-item'>
-            <aside-menu mode='horizontal' />
+            <top-menu />
           </div>
           <div class='actions-container flex-none container-item'>
             <horizontal-actions>
@@ -30,14 +30,14 @@
 <script setup lang="ts">
 import LayoutLogo from '@/components/logo/index.vue';
 import HorizontalActions from '@/components/actions/horizontal.vue';
-import AsideMenu from '@/components/menu/index.vue';
+import TopMenu from '@/components/menu/top-menu.vue';
 
 </script>
 
 <style scoped lang="scss">
 
 .layout-header {
-  border-bottom: 1px solid var(--el-border-color-lighter);
+  border-bottom: 1px solid var(--el-border-color);
 }
 
 .header-container {

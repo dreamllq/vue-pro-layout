@@ -32,5 +32,9 @@
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
-  }
+  },
+  "cSpell.words": [
+    "Sider",
+    "vueuse"
+  ]
 }

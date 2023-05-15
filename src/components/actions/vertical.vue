@@ -4,13 +4,15 @@
       <slot />
     </div>
     <div class='avatar-container flex-none'>
-      <avatar />
+      <avatar :menu-is-collapse='menuIsCollapse' />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import Avatar from './avatar.vue';
+import { useState } from '@/use-state';
+const { menuIsCollapse } = useState();
 
 </script>
 

@@ -13,9 +13,14 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useState } from '@/use-state';
 
-const { menuIsCollapse } = useState();
+
+defineProps({
+  menuIsCollapse: {
+    type: Boolean,
+    default: false
+  }
+});
 
 const avatarUrl = 'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png';
 const name = ref('name');

@@ -4,13 +4,13 @@
       <el-aside :width='`${siderWidth}px`' style='overflow: revert; transition: all .5s ease 0s;'>
         <div class='aside-container flex flex-column' style='height: 100%;'>
           <div class='logo-container flex-none container-item'>
-            <layout-logo />
+            <layout-logo :menu-is-collapse='menuIsCollapse' />
           </div>
           <div v-if='slots.menuHeader' class='menu-header-container flex-none container-item'>
             <slot name='menuHeader' />
           </div>
           <div class='menu-container flex-item container-item'>
-            <aside-menu />
+            <side-menu />
           </div>
           <div class='actions-container flex-none container-item'>
             <horizontal-actions v-if='menuIsCollapse === false'>
@@ -50,7 +50,8 @@
 import { useSlots } from 'vue';
 import { useState } from '@/use-state';
 import LayoutLogo from '@/components/logo/index.vue';
-import AsideMenu from '@/components/menu/index.vue';
+// import AsideMenu from '@/components/menu/index.vue';
+import SideMenu from '@/components/menu/side-menu.vue';
 import HorizontalActions from '@/components/actions/horizontal.vue';
 import VerticalActions from '@/components/actions/vertical.vue';
 

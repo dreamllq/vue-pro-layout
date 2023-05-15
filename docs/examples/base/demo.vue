@@ -1,5 +1,5 @@
 <template>
-  <el-form>
+  <el-form inline>
     <el-form-item label='layout'>
       <el-radio-group v-model='layout'>
         <el-radio-button label='mix' />
@@ -7,9 +7,18 @@
         <el-radio-button label='top' />
       </el-radio-group>
     </el-form-item>
+    <el-form-item>
+      <el-checkbox v-model='suppressSiderWhenMenuEmpty'>
+        suppressSiderWhenMenuEmpty
+      </el-checkbox>
+    </el-form-item>
   </el-form>
   <div style='height: 900px;border: 1px solid #000000;'>
-    <pro-layout :menu='menu' :layout='layout' @menu-select='onMenuSelect'>
+    <pro-layout
+      :menu='menu'
+      :layout='layout'
+      :suppress-sider-when-menu-empty='suppressSiderWhenMenuEmpty'
+      @menu-select='onMenuSelect'>
       <el-button @click='menu.index = "welcome1-1"'>
         首页1-1
       </el-button>
@@ -62,7 +71,8 @@ const menuData = [
   }
 ];
 
-const layout = ref('side');
+const layout = ref('mix');
+const suppressSiderWhenMenuEmpty = ref(false);
 const menu = reactive({
   data: menuData,
   index: 'welcome1-2'
