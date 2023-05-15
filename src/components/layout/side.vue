@@ -76,19 +76,24 @@ const onCollapsed = () => {
   box-sizing: border-box;
   position: relative;
 
-  .container-item {
-    margin: 4px 0;
+  .logo-container {
+    height: 55px;
+    align-items: center;
+    padding: 16px 12px;
     box-sizing: border-box;
+    border-bottom: 1px solid var(--el-border-color-lighter);
+    margin-top: 0;
+    display: flex;
   }
+ 
 }
 
-.logo-container {
-  height: 55px;
-  align-items: center;
-  padding: 16px 12px;
+.container-item {
+  margin: 4px 0;
   box-sizing: border-box;
-  border-bottom: 1px solid var(--el-border-color-lighter);
 }
+
+
 
 .aside-collapsed-button {
   position: absolute;
