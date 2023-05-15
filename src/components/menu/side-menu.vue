@@ -1,8 +1,8 @@
 <template>
   <lc-menu
-    :menu-data='config.menu.data'
-    :menu-index='config.menu.index'
-    :is-collapse='menuIsCollapse'
+    :menu-data='config?.menu.data'
+    :menu-index='config?.menu.index'
+    :is-collapse='config?.collapsed'
     mode='vertical'
     @select='onSelect' />
 </template>
@@ -12,7 +12,7 @@ import LcMenu from '@/packages/menu/index.vue';
 import { useState } from '@/use-state';
 import { useBus } from '@/use-bus';
 
-const { config, menuIsCollapse } = useState();
+const { config } = useState();
 const bus = useBus();
 
 const onSelect = (index) => {

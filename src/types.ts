@@ -7,7 +7,8 @@ export interface LayoutProps {
   siderWidth: number,
   suppressSiderWhenMenuEmpty: boolean,
   menu: MenuProps,
-  avatar: AvatarProps
+  avatar: AvatarProps,
+  collapsed: boolean
 }
 
 export type LayoutType = 'side' | 'top' | 'mix'

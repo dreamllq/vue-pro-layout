@@ -1,20 +1,19 @@
-import { Ref, computed, ref } from 'vue';
+import { computed, ref } from 'vue';
 import { createGlobalState } from '@vueuse/core';
 import { LayoutProps } from './types';
+import { cloneDeep } from 'lodash';
 
 export const useState = createGlobalState(
   () => {
     const config = ref<LayoutProps>();
-    const menuIsCollapse = ref(false);
 
     const setConfig = (c:LayoutProps) => {
-      config.value = c;
+      config.value = cloneDeep(c);
     };
 
-    const siderWidth = computed(() => menuIsCollapse.value ? '64' : config.value?.siderWidth);
+    const siderWidth = computed(() => config.value?.collapsed ? '64' : config.value?.siderWidth);
     return {
       config,
-      menuIsCollapse,
       siderWidth,
       setConfig 
     };

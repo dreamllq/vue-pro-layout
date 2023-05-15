@@ -9,7 +9,7 @@
     </template>
 
     <template v-if='slots.actions' #actions>
-      <slot name='actions' :is-collapse='menuIsCollapse' />
+      <slot name='actions' :is-collapse='config?.collapsed' />
     </template>
     
     <template v-if='slots.avatarDropdown' #avatarDropdown>
@@ -31,7 +31,7 @@ import { useBus } from '@/use-bus';
 
 const slots = useSlots();
 const bus = useBus();
-const { setConfig, menuIsCollapse } = useState();
+const { setConfig, config } = useState();
 
 const props = withDefaults(defineProps<{
   title?: string,
@@ -41,7 +41,8 @@ const props = withDefaults(defineProps<{
   siderWidth?: number,
   suppressSiderWhenMenuEmpty?: boolean,
   menu: MenuProps,
-  avatar: AvatarProps
+  avatar: AvatarProps,
+  collapsed?: boolean
 }>(), {
   title: 'lc pro',
   layout: 'side',

@@ -1,8 +1,8 @@
 <template>
   <lc-menu
     :menu-data='sideMenuData'
-    :menu-index='config.menu.index'
-    :is-collapse='menuIsCollapse'
+    :menu-index='config?.menu.index'
+    :is-collapse='config?.collapsed'
     mode='vertical'
     @select='onSelect' />
 </template>
@@ -13,7 +13,7 @@ import { useState } from '@/use-state';
 import { useBus } from '@/use-bus';
 import { useMixMenuState } from '@/use-mix-menu-state';
 
-const { config, menuIsCollapse } = useState();
+const { config } = useState();
 const bus = useBus();
 const { sideMenuData } = useMixMenuState();
 

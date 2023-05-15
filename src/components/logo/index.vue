@@ -4,7 +4,7 @@
       <img src='@/assets/logo.svg' alt='logo'>
     </div>
     <div v-if='menuIsCollapse === false' class='title flex-item'>
-      {{ config.title }}
+      {{ config?.title }}
     </div>
   </div>
 </template>

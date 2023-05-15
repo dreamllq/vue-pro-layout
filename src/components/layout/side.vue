@@ -4,7 +4,7 @@
       <el-aside :width='`${siderWidth}px`' style='overflow: revert; transition: all .5s ease 0s;'>
         <div class='aside-container flex flex-column' style='height: 100%;'>
           <div class='logo-container flex-none container-item'>
-            <layout-logo :menu-is-collapse='menuIsCollapse' />
+            <layout-logo :menu-is-collapse='config?.collapsed' />
           </div>
           <div v-if='slots.menuHeader' class='menu-header-container flex-none container-item'>
             <slot name='menuHeader' />
@@ -13,7 +13,7 @@
             <side-menu />
           </div>
           <div class='actions-container flex-none container-item'>
-            <horizontal-actions v-if='menuIsCollapse === false'>
+            <horizontal-actions v-if='config?.collapsed === false'>
               <template #default>
                 <slot name='actions' />
               </template>
@@ -35,7 +35,7 @@
           </div>
           <div class='aside-collapsed-button' @click='onCollapsed'>
             <el-icon>
-              <template v-if='menuIsCollapse'>
+              <template v-if='config?.collapsed'>
                 <component is='ArrowRight' />
               </template>
               <template v-else>
@@ -61,11 +61,11 @@ import SideMenu from '@/components/menu/side-menu.vue';
 import HorizontalActions from '@/components/actions/horizontal.vue';
 import VerticalActions from '@/components/actions/vertical.vue';
 
-const { menuIsCollapse, siderWidth } = useState();
+const { siderWidth, config } = useState();
 const slots = useSlots();
 
 const onCollapsed = () => {
-  menuIsCollapse.value = !menuIsCollapse.value;
+  config.value!.collapsed = !config.value?.collapsed;
 };
 </script>
 

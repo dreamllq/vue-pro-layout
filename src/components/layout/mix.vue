@@ -35,7 +35,7 @@
             </div>
             <div class='aside-collapsed-button' @click='onCollapsed'>
               <el-icon>
-                <template v-if='menuIsCollapse'>
+                <template v-if='config?.collapsed'>
                   <component is='ArrowRight' />
                 </template>
                 <template v-else>
@@ -62,14 +62,14 @@ import HorizontalActions from '@/components/actions/horizontal.vue';
 import MixTopMenu from '@/components/menu/mix-top-menu.vue';
 import MixSideMenu from '@/components/menu/mix-side-menu.vue';
 
-const { menuIsCollapse, siderWidth, config } = useState();
+const { siderWidth, config } = useState();
 const { sideMenuData } = useMixMenuState();
 const slots = useSlots();
 
 const showSide = computed(() => !(config.value.suppressSiderWhenMenuEmpty === true && sideMenuData.value.length === 0));
 
 const onCollapsed = () => {
-  menuIsCollapse.value = !menuIsCollapse.value;
+  config.value!.collapsed = !config.value?.collapsed;
 };
 </script>
 

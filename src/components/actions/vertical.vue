@@ -4,7 +4,7 @@
       <slot />
     </div>
     <div class='avatar-container flex-none'>
-      <avatar :menu-is-collapse='menuIsCollapse'>
+      <avatar :menu-is-collapse='config?.collapsed'>
         <template v-if='slots.avatarDropdown' #dropdown>
           <slot name='avatarDropdown' />
         </template>
@@ -18,7 +18,7 @@ import { useSlots } from 'vue';
 import { useState } from '@/use-state';
 import Avatar from './avatar.vue';
 
-const { menuIsCollapse } = useState();
+const { config } = useState();
 const slots = useSlots();
 </script>
 
