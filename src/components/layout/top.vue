@@ -14,7 +14,7 @@
           <div class='menu-container flex-item container-item'>
             <top-menu />
           </div>
-          <div class='actions-container flex-none container-item'>
+          <div v-if='config.avatar' class='actions-container flex-none container-item'>
             <horizontal-actions>
               <template #default>
                 <slot name='actions' />
@@ -41,7 +41,10 @@ import { useSlots } from 'vue';
 import LayoutLogo from '@/components/logo/index.vue';
 import HorizontalActions from '@/components/actions/horizontal.vue';
 import TopMenu from '@/components/menu/top-menu.vue';
+import { useState } from '@/use-state';
+
 const slots = useSlots();
+const { config } = useState()!;
 
 </script>
 

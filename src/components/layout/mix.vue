@@ -11,7 +11,7 @@
           <div class='menu-container flex-item container-item'>
             <mix-top-menu />
           </div>
-          <div class='actions-container flex-none container-item'>
+          <div v-if='config.avatar' class='actions-container flex-none container-item'>
             <horizontal-actions>
               <template #default>
                 <slot name='actions' />
@@ -104,7 +104,8 @@ const onCollapsed = () => {
   }
 
   .menu-container {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 

@@ -14,7 +14,7 @@
           <div class='menu-container flex-item container-item'>
             <side-menu />
           </div>
-          <div class='actions-container flex-none container-item'>
+          <div v-if='config.avatar' class='actions-container flex-none container-item'>
             <horizontal-actions v-if='config?.collapsed === false'>
               <template #default>
                 <slot name='actions' />
@@ -77,6 +77,7 @@ const onCollapsed = () => {
   padding: 0 8px;
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 
   .logo-container {
     height: 55px;
@@ -89,7 +90,8 @@ const onCollapsed = () => {
   }
 
   .menu-container {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 }
 

@@ -45,7 +45,7 @@ const props = withDefaults(defineProps<{
   siderWidth?: number,
   suppressSiderWhenMenuEmpty?: boolean,
   menu: MenuProps,
-  avatar: AvatarProps,
+  avatar?: AvatarProps,
   collapsed?: boolean,
   hiddenCollapsedButton?: boolean
 }>(), {
@@ -53,7 +53,8 @@ const props = withDefaults(defineProps<{
   layout: 'side',
   contentWidth: 'Fluid',
   siderWidth: 256,
-  menuData: () => []
+  menuData: () => [],
+  avatar: undefined
 });
 
 useProvideState(props);

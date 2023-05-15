@@ -7,7 +7,7 @@ export interface LayoutProps {
   siderWidth: number,
   suppressSiderWhenMenuEmpty: boolean,
   menu: MenuProps,
-  avatar: AvatarProps,
+  avatar: AvatarProps | undefined,
   collapsed: boolean,
   hiddenCollapsedButton: boolean
 }

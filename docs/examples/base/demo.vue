@@ -22,7 +22,6 @@
     <pro-layout
       ref='layoutRef'
       :menu='menu'
-      :avatar='avatar'
       :layout='layout'
       :suppress-sider-when-menu-empty='suppressSiderWhenMenuEmpty'
       :hidden-collapsed-button='hiddenCollapsedButton'
