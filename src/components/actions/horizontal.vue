@@ -1,6 +1,6 @@
 <template>
   <div class='layout-actions horizontal flex'>
-    <div v-if='config.layout === "top" || config.layout === "mix"' class='actions-container flex-item'>
+    <div v-if='config?.layout === "top" || config?.layout === "mix"' class='actions-container flex-item'>
       <slot />
     </div>
     <div class='avatar-container flex-none'>
@@ -10,7 +10,7 @@
         </template>
       </avatar>
     </div>
-    <div v-if='config.layout === "side"' class='actions-container flex-item'>
+    <div v-if='config?.layout === "side"' class='actions-container flex-item'>
       <slot />
     </div>
   </div>

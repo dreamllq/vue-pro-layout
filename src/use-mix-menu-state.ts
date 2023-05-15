@@ -1,4 +1,4 @@
-import { Ref, computed, ref } from 'vue';
+import { computed } from 'vue';
 import { createGlobalState } from '@vueuse/core';
 import { useState } from '@/use-state';
 import { MenuItem } from './types';

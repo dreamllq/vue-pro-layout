@@ -29,7 +29,8 @@ export default defineConfig({
         'moment',
         'rxjs',
         '@vueuse/core',
-        'lc-vue-biz-menu'
+        'lc-vue-biz-menu',
+        'eventemitter3'
       ],
       output: {
         // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
@@ -40,7 +41,8 @@ export default defineConfig({
           'moment': 'moment',
           'rxjs': 'rxjs',
           '@vueuse/core': '@vueuse/core',
-          'lc-vue-biz-menu': 'lc-vue-biz-menu'
+          'lc-vue-biz-menu': 'lc-vue-biz-menu',
+          'eventemitter3': 'eventemitter3'
         },
         exports: 'named'
       }

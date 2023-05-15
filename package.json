@@ -68,7 +68,8 @@
   },
   "peerDependencies": {
     "lc-vue-biz-menu": "*",
-    "vue": "3.x"
+    "vue": "3.x",
+    "eventemitter3": "*"
   },
   "author": {
     "name": "lvliqi",
