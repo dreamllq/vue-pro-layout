@@ -3,6 +3,7 @@
     :menu-data='sideMenuData'
     :menu-index='config?.menu.index'
     :is-collapse='config?.collapsed'
+    :unique-opened='config?.menu.uniqueOpened'
     mode='vertical'
     @select='onSelect' />
 </template>

@@ -167,9 +167,43 @@ const jump = (index: string) => {
  | actions | 渲染actions区域 |
  | avatarDropdown | 渲染头像dropdown | 
 
- ## Exposes
+### Exposes
 
 | 名称 | 描述 | 类型 |
 | ---- | ---- | ---- |
 | setMenuIndex | 设置menu选中的index | (index:string)=>\{\} |
 | setCollapsed | 设置sider是否折叠 | (collapsed: boolean)=>\{\} |
+
+
+## Types
+
+### MenuProps
+
+```ts
+interface MenuProps {
+  data: MenuItem[],
+  index: string,
+  uniqueOpened?: boolean
+}
+```
+
+### MenuItem
+
+```ts
+interface MenuItem {
+  key: string,
+  label: string,
+  icon?: string,
+  subPages?: string[],
+  children?: MenuItem[]
+}
+```
+
+### AvatarProps
+
+```ts
+interface AvatarProps{
+  src?: string,
+  title?: string
+}
+```

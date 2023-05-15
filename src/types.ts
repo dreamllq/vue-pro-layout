@@ -23,10 +23,11 @@ export interface MenuItem {
 
 export interface MenuProps {
   data: MenuItem[],
-  index: string
+  index: string,
+  uniqueOpened?: boolean
 }
 
 export interface AvatarProps{
-  src: string,
-  title: string
+  src?: string,
+  title?: string
 }
