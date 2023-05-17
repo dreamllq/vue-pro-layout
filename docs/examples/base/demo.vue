@@ -83,6 +83,25 @@ const menuData = [
         'icon': 'House',
         'label': '首页1-2',
         'children': null
+      },
+      {
+        'key': 'welcome1-3',
+        'icon': 'House',
+        'label': '首页1-3',
+        'children': [
+          {
+            'key': 'welcome1-3-1',
+            'icon': 'House',
+            'label': '首页1-3-1',
+            'children': null
+          },
+          {
+            'key': 'welcome1-3-2',
+            'icon': 'House',
+            'label': '首页1-3-2',
+            'children': null
+          }
+        ]
       }
     ]
   },
