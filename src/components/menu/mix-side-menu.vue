@@ -11,11 +11,9 @@
 <script setup lang="ts">
 import { BizMenu } from 'lc-vue-biz-menu';
 import { useState } from '@/use-state';
-import { useBus } from '@/use-bus';
 import { useMixMenuState } from '@/use-mix-menu-state';
 
-const { config } = useState()!;
-const bus = useBus();
+const { config, bus } = useState()!;
 const { sideMenuData } = useMixMenuState()!;
 
 

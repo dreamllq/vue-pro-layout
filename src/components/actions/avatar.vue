@@ -29,7 +29,6 @@
 <script setup lang="ts">
 import { useSlots } from 'vue';
 import { useState } from '@/use-state';
-import { useBus } from '@/use-bus';
 
 defineProps({
   menuIsCollapse: {
@@ -38,9 +37,8 @@ defineProps({
   }
 });
 
-const { config } = useState()!;
+const { config, bus } = useState()!;
 const slots = useSlots();
-const bus = useBus();
 
 const handleCommand = (...args) => {
   bus.emit('avatar-command', ...args);

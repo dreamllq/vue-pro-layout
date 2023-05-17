@@ -21,6 +21,7 @@
   <div style='height: 900px;border: 1px solid #000000;'>
     <pro-layout
       ref='layoutRef'
+      :avatar='avatar'
       :menu='menu'
       :layout='layout'
       :suppress-sider-when-menu-empty='suppressSiderWhenMenuEmpty'

@@ -36,7 +36,11 @@ import { useSlots, computed } from 'vue';
 import { useMixMenuProvideState } from '@/use-mix-menu-state';
 
 useMixMenuProvideState();
-const { config } = useState()!;
+
+const emit = defineEmits(['menu-select', 'avatar-command']);
+
+
+const { config, bus } = useState()!;
 
 const slots = useSlots();
 
@@ -47,6 +51,14 @@ const componentMap = {
 };
 
 const layoutComponent = computed(() => componentMap[config.value!.layout]);
+
+bus.on('menu-select', (...args) => {
+  emit('menu-select', ...args);
+});
+
+bus.on('avatar-command', (...args) => {
+  emit('avatar-command', ...args);
+});
 
 defineExpose({ getConfig: () => config });
 </script>

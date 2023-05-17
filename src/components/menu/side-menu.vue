@@ -11,10 +11,8 @@
 <script setup lang="ts">
 import { BizMenu } from 'lc-vue-biz-menu';
 import { useState } from '@/use-state';
-import { useBus } from '@/use-bus';
 
-const { config } = useState()!;
-const bus = useBus();
+const { config, bus } = useState()!;
 
 const onSelect = (index) => {
   config.value!.menu.index = index;

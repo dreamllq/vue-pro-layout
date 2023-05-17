@@ -8,12 +8,10 @@
 
 <script setup lang="ts">
 import { BizMenu } from 'lc-vue-biz-menu';
-import { useBus } from '@/use-bus';
 import { useMixMenuState } from '@/use-mix-menu-state';
 import { useState } from '@/use-state';
 
-const bus = useBus();
-const { config } = useState()!;
+const { config, bus } = useState()!;
 
 const { topMenuData, topMenuIndex, getSideMenuDataFirst } = useMixMenuState()!;
 

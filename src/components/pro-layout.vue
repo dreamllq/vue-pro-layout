@@ -1,5 +1,5 @@
 <template>
-  <layout ref='layoutRef'>
+  <layout ref='layoutRef' @menu-select='onMenuSelect' @avatar-command='onAvatarCommand'>
     <template #default>
       <slot />
     </template>
@@ -31,11 +31,9 @@ import { withDefaults, useSlots, watch, ref } from 'vue';
 import { useProvideState } from '@/use-state';
 import Layout from './layout/index.vue';
 import { AvatarProps, MenuProps } from '@/types';
-import { useBus } from '@/use-bus';
 import { cloneDeep } from 'lodash';
 
 const slots = useSlots();
-const bus = useBus();
 
 const props = withDefaults(defineProps<{
   title?: string,
@@ -68,13 +66,13 @@ watch(() => props.suppressSiderWhenMenuEmpty, () => layoutRef.value.getConfig().
 watch(() => props.layout, () => layoutRef.value.getConfig().value!.layout = props.layout);
 watch(() => props.hiddenCollapsedButton, () => layoutRef.value.getConfig().value!.hiddenCollapsedButton = props.hiddenCollapsedButton);
 
-bus.on('menu-select', (...args) => {
+const onMenuSelect = (...args) => {
   emit('menu-select', ...args);
-});
+};
 
-bus.on('avatar-command', (...args) => {
+const onAvatarCommand = (...args) => {
   emit('avatar-command', ...args);
-});
+};
 
 const setMenuIndex = (index: string) => {
   layoutRef.value.getConfig().value!.menu.index = index;
